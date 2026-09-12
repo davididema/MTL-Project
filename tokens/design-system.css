@@ -1,0 +1,118 @@
+/*  ═══════════════════════════════════════════════════════════════════════
+ *  design-system.css  —  Auto-generated from design tokens
+ *  Generated: 2026-09-07T13:51:34.311Z
+ *
+ *  DO NOT EDIT MANUALLY — re-run  node convert-tokens.js  to regenerate.
+ *  ═══════════════════════════════════════════════════════════════════════ */
+
+:root {
+
+  /* ── Colour Roles (Light) ───────────────────────────────── */
+  --primary-color: hsl(210, 82%, 27%);
+  --on-primary-color: hsl(0, 0%, 100%);
+  --primary-container-color: hsl(217, 100%, 82%);
+  --on-primary-container-color: hsl(210, 77%, 28%);
+  --secondary-color: hsl(38, 100%, 26%);
+  --on-secondary-color: hsl(0, 0%, 100%);
+  --secondary-container-color: hsl(34, 100%, 68%);
+  --on-secondary-container-color: hsl(37, 100%, 20%);
+  --tertiary-color: hsl(216, 35%, 40%);
+  --on-tertiary-color: hsl(0, 0%, 100%);
+  --tertiary-container-color: hsl(217, 87%, 82%);
+  --on-tertiary-container-color: hsl(214, 47%, 30%);
+  --error-color: hsl(5, 100%, 37%);
+  --on-error-color: hsl(0, 0%, 100%);
+  --error-container-color: hsl(9, 100%, 83%);
+  --on-error-container-color: hsl(4, 100%, 28%);
+  --background-color: hsl(0, 0%, 98%);
+  --on-background-color: hsl(180, 4%, 11%);
+  --surface-color: hsl(0, 0%, 98%);
+  --on-surface-color: hsl(180, 4%, 11%);
+  --surface-variant-color: hsl(280, 5%, 89%);
+  --on-surface-variant-color: hsl(260, 2%, 28%);
+  --outline-color: hsl(240, 1%, 47%);
+  --outline-variant-color: hsl(280, 3%, 78%);
+  --inverse-surface-color: hsl(180, 2%, 19%);
+  --inverse-on-surface-color: hsl(180, 3%, 94%);
+  --inverse-primary-color: hsl(217, 100%, 82%);
+  --surface-dim-color: hsl(0, 0%, 85%);
+  --surface-bright-color: hsl(0, 0%, 98%);
+  --surface-container-lowest-color: hsl(0, 0%, 100%);
+  --surface-container-low-color: hsl(240, 4%, 95%);
+  --surface-container-color: hsl(0, 0%, 93%);
+  --surface-container-high-color: hsl(0, 0%, 91%);
+  --surface-container-highest-color: hsl(240, 4%, 95%);
+
+  /* ── Typography ────────────────────────────────────────── */
+  --font-family-sans: Roboto;
+  --font-family-display: Inter;
+  --font-family-mono: Montserrat;
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 1.875rem;
+  --font-size-4xl: 2.25rem;
+  --font-size-5xl: 3rem;
+  --font-size-6xl: 3.75rem;
+  --font-size-7xl: 4.5rem;
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+  --line-height-none: 1;
+  --line-height-tight: 1.25;
+  --line-height-snug: 1.375;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.625;
+  --line-height-loose: 2;
+  --letter-spacing-tighter: -0.05em;
+  --letter-spacing-tight: -0.025em;
+  --letter-spacing-normal: 0em;
+  --letter-spacing-wide: 0.025em;
+  --letter-spacing-wider: 0.05em;
+  --letter-spacing-widest: 0.1em;
+}
+
+[data-theme="dark"] {
+
+  /* ── Colour Roles (Dark) ────────────────────────────────── */
+  --primary-color: hsl(210, 82%, 27%);
+  --on-primary-color: hsl(209, 100%, 18%);
+  --primary-container-color: hsl(210, 77%, 28%);
+  --on-primary-container-color: hsl(219, 100%, 92%);
+  --secondary-color: hsl(34, 100%, 68%);
+  --on-secondary-color: hsl(36, 100%, 14%);
+  --secondary-container-color: hsl(37, 100%, 20%);
+  --on-secondary-container-color: hsl(32, 100%, 86%);
+  --tertiary-color: hsl(217, 87%, 82%);
+  --on-tertiary-color: hsl(212, 75%, 20%);
+  --tertiary-container-color: hsl(214, 47%, 30%);
+  --on-tertiary-container-color: hsl(219, 100%, 92%);
+  --error-color: hsl(300, 100%, 50%);
+  --on-error-color: hsl(300, 100%, 50%);
+  --error-container-color: hsl(300, 100%, 50%);
+  --on-error-container-color: hsl(300, 100%, 50%);
+  --background-color: hsl(300, 100%, 50%);
+  --on-background-color: hsl(0, 0%, 89%);
+  --surface-color: hsl(300, 100%, 50%);
+  --on-surface-color: hsl(0, 0%, 89%);
+  --surface-variant-color: hsl(260, 2%, 28%);
+  --on-surface-variant-color: hsl(280, 3%, 78%);
+  --outline-color: hsl(260, 1%, 57%);
+  --outline-variant-color: hsl(260, 2%, 28%);
+  --inverse-surface-color: hsl(0, 0%, 89%);
+  --inverse-on-surface-color: hsl(180, 2%, 19%);
+  --inverse-primary-color: hsl(213, 51%, 40%);
+  --surface-dim-color: hsl(300, 100%, 50%);
+  --surface-bright-color: hsl(300, 100%, 50%);
+  --surface-container-lowest-color: hsl(300, 100%, 50%);
+  --surface-container-low-color: hsl(180, 4%, 11%);
+  --surface-container-color: hsl(300, 100%, 50%);
+  --surface-container-high-color: hsl(300, 100%, 50%);
+  --surface-container-highest-color: hsl(300, 100%, 50%);
+}
