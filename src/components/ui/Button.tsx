@@ -87,12 +87,13 @@ export default function Button(props: ButtonProps) {
     withArrow: _wa,
     variant: _v,
     size: _s,
+    className: _className,
     children: _c,
     ...buttonProps
   } = props as ButtonAsButton & { href?: never; external?: never };
 
   return (
-    <button className={baseClasses} {...buttonProps}>
+    <button {...buttonProps} className={baseClasses}>
       {content}
     </button>
   );

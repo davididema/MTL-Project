@@ -1,6 +1,6 @@
 /*  ═══════════════════════════════════════════════════════════════════════
  *  design-system.css  —  Auto-generated from design tokens
- *  Generated: 2026-09-07T13:51:34.311Z
+ *  Generated: 2026-09-12T03:53:24.006Z
  *
  *  DO NOT EDIT MANUALLY — re-run  node convert-tokens.js  to regenerate.
  *  ═══════════════════════════════════════════════════════════════════════ */
@@ -8,40 +8,40 @@
 :root {
 
   /* ── Colour Roles (Light) ───────────────────────────────── */
-  --primary-color: hsl(210, 82%, 27%);
-  --on-primary-color: hsl(0, 0%, 100%);
-  --primary-container-color: hsl(217, 100%, 82%);
-  --on-primary-container-color: hsl(210, 77%, 28%);
-  --secondary-color: hsl(38, 100%, 26%);
-  --on-secondary-color: hsl(0, 0%, 100%);
-  --secondary-container-color: hsl(34, 100%, 68%);
-  --on-secondary-container-color: hsl(37, 100%, 20%);
-  --tertiary-color: hsl(216, 35%, 40%);
-  --on-tertiary-color: hsl(0, 0%, 100%);
-  --tertiary-container-color: hsl(217, 87%, 82%);
-  --on-tertiary-container-color: hsl(214, 47%, 30%);
-  --error-color: hsl(5, 100%, 37%);
-  --on-error-color: hsl(0, 0%, 100%);
-  --error-container-color: hsl(9, 100%, 83%);
-  --on-error-container-color: hsl(4, 100%, 28%);
-  --background-color: hsl(0, 0%, 98%);
-  --on-background-color: hsl(180, 4%, 11%);
-  --surface-color: hsl(0, 0%, 98%);
-  --on-surface-color: hsl(180, 4%, 11%);
-  --surface-variant-color: hsl(280, 5%, 89%);
-  --on-surface-variant-color: hsl(260, 2%, 28%);
-  --outline-color: hsl(240, 1%, 47%);
-  --outline-variant-color: hsl(280, 3%, 78%);
-  --inverse-surface-color: hsl(180, 2%, 19%);
-  --inverse-on-surface-color: hsl(180, 3%, 94%);
-  --inverse-primary-color: hsl(217, 100%, 82%);
-  --surface-dim-color: hsl(0, 0%, 85%);
-  --surface-bright-color: hsl(0, 0%, 98%);
-  --surface-container-lowest-color: hsl(0, 0%, 100%);
-  --surface-container-low-color: hsl(240, 4%, 95%);
-  --surface-container-color: hsl(0, 0%, 93%);
-  --surface-container-high-color: hsl(0, 0%, 91%);
-  --surface-container-highest-color: hsl(240, 4%, 95%);
+  --primary-color: #4F46E5;
+  --on-primary-color: #FFFFFF;
+  --primary-container-color: #E0E7FF;
+  --on-primary-container-color: #312E81;
+  --secondary-color: #818CF8;
+  --on-secondary-color: #1E1B4B;
+  --secondary-container-color: #DFE2FF;
+  --on-secondary-container-color: #2A2A6E;
+  --tertiary-color: #FB923C;
+  --on-tertiary-color: #1E1B4B;
+  --tertiary-container-color: #FFE0C2;
+  --on-tertiary-container-color: #5C3400;
+  --error-color: #B3261E;
+  --on-error-color: #FFFFFF;
+  --error-container-color: #F9DEDC;
+  --on-error-container-color: #410E0B;
+  --background-color: #FAFAFA;
+  --on-background-color: #1E1B4B;
+  --surface-color: #FAFAFA;
+  --on-surface-color: #1E1B4B;
+  --surface-variant-color: #E8E8F2;
+  --on-surface-variant-color: #46465F;
+  --outline-color: #7A7A8F;
+  --outline-variant-color: #C9C9D8;
+  --inverse-surface-color: #1E1B4B;
+  --inverse-on-surface-color: #ECEEFE;
+  --inverse-primary-color: #818CF8;
+  --surface-dim-color: #E2E2ED;
+  --surface-bright-color: #FAFAFA;
+  --surface-container-lowest-color: #FFFFFF;
+  --surface-container-low-color: #F1F1F7;
+  --surface-container-color: #ECECF4;
+  --surface-container-high-color: #E5E5F0;
+  --surface-container-highest-color: #DFDFEC;
 
   /* ── Typography ────────────────────────────────────────── */
   --font-family-sans: Roboto;
@@ -81,38 +81,38 @@
 [data-theme="dark"] {
 
   /* ── Colour Roles (Dark) ────────────────────────────────── */
-  --primary-color: hsl(210, 82%, 27%);
-  --on-primary-color: hsl(209, 100%, 18%);
-  --primary-container-color: hsl(210, 77%, 28%);
-  --on-primary-container-color: hsl(219, 100%, 92%);
-  --secondary-color: hsl(34, 100%, 68%);
-  --on-secondary-color: hsl(36, 100%, 14%);
-  --secondary-container-color: hsl(37, 100%, 20%);
-  --on-secondary-container-color: hsl(32, 100%, 86%);
-  --tertiary-color: hsl(217, 87%, 82%);
-  --on-tertiary-color: hsl(212, 75%, 20%);
-  --tertiary-container-color: hsl(214, 47%, 30%);
-  --on-tertiary-container-color: hsl(219, 100%, 92%);
-  --error-color: hsl(300, 100%, 50%);
-  --on-error-color: hsl(300, 100%, 50%);
-  --error-container-color: hsl(300, 100%, 50%);
-  --on-error-container-color: hsl(300, 100%, 50%);
-  --background-color: hsl(300, 100%, 50%);
-  --on-background-color: hsl(0, 0%, 89%);
-  --surface-color: hsl(300, 100%, 50%);
-  --on-surface-color: hsl(0, 0%, 89%);
-  --surface-variant-color: hsl(260, 2%, 28%);
-  --on-surface-variant-color: hsl(280, 3%, 78%);
-  --outline-color: hsl(260, 1%, 57%);
-  --outline-variant-color: hsl(260, 2%, 28%);
-  --inverse-surface-color: hsl(0, 0%, 89%);
-  --inverse-on-surface-color: hsl(180, 2%, 19%);
-  --inverse-primary-color: hsl(213, 51%, 40%);
-  --surface-dim-color: hsl(300, 100%, 50%);
-  --surface-bright-color: hsl(300, 100%, 50%);
-  --surface-container-lowest-color: hsl(300, 100%, 50%);
-  --surface-container-low-color: hsl(180, 4%, 11%);
-  --surface-container-color: hsl(300, 100%, 50%);
-  --surface-container-high-color: hsl(300, 100%, 50%);
-  --surface-container-highest-color: hsl(300, 100%, 50%);
+  --primary-color: #A5B4FC;
+  --on-primary-color: #1E1B4B;
+  --primary-container-color: #3730A3;
+  --on-primary-container-color: #E0E7FF;
+  --secondary-color: #A0A8FF;
+  --on-secondary-color: #1E1B4B;
+  --secondary-container-color: #3A3B84;
+  --on-secondary-container-color: #DFE2FF;
+  --tertiary-color: #FFB27A;
+  --on-tertiary-color: #4A2400;
+  --tertiary-container-color: #6B3600;
+  --on-tertiary-container-color: #FFDCC2;
+  --error-color: #FFB4AB;
+  --on-error-color: #690005;
+  --error-container-color: #93000A;
+  --on-error-container-color: #FFDAD6;
+  --background-color: #12102F;
+  --on-background-color: #E7E9F9;
+  --surface-color: #1E1B4B;
+  --on-surface-color: #E7E9F9;
+  --surface-variant-color: #46465F;
+  --on-surface-variant-color: #CBC9E0;
+  --outline-color: #9391AA;
+  --outline-variant-color: #46465F;
+  --inverse-surface-color: #EFEFF7;
+  --inverse-on-surface-color: #1E1B4B;
+  --inverse-primary-color: #4F46E5;
+  --surface-dim-color: #17153A;
+  --surface-bright-color: #3E3B84;
+  --surface-container-lowest-color: #0C0A2B;
+  --surface-container-low-color: #1F1D43;
+  --surface-container-color: #242250;
+  --surface-container-high-color: #2E2B5E;
+  --surface-container-highest-color: #39366C;
 }

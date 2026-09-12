@@ -61,9 +61,9 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8 py-24 md:py-32 lg:py-40 text-center">
           <AnimatedSection>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-extrabold leading-[var(--line-height-tight)] tracking-[var(--letter-spacing-tighter)]">
-              Engineering Digital
+              We build strong digital
               <br />
-              <span className="text-inverse-primary">Excellence</span>
+              <span className="text-inverse-primary">websites here at Forge Studio</span>
             </h1>
           </AnimatedSection>
           <AnimatedSection delay={0.15}>

@@ -114,7 +114,7 @@ export default function ContactFAQPage() {
                   <div
                     className="absolute inset-0 opacity-20 pointer-events-none"
                     style={{
-                      backgroundImage: `radial-gradient(var(--outline) 1px, transparent 1px)`,
+                      backgroundImage: `radial-gradient(var(--outline-color) 1px, transparent 1px)`,
                       backgroundSize: "20px 20px",
                     }}
                   />
