@@ -1,26 +1,229 @@
 @import "tailwindcss";
 
+/* ══════════════════════════════════════════════════════════════════
+   Design System Tokens  —  Sourced from tokens/color-token.json & design-token.json
+   ══════════════════════════════════════════════════════════════════ */
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* ── Colour Roles (Light) ───────────────────────────────── */
+  --primary-color: hsl(210, 82%, 27%);
+  --on-primary-color: hsl(0, 0%, 100%);
+  --primary-container-color: hsl(217, 100%, 82%);
+  --on-primary-container-color: hsl(210, 77%, 28%);
+  --secondary-color: hsl(38, 100%, 26%);
+  --on-secondary-color: hsl(0, 0%, 100%);
+  --secondary-container-color: hsl(34, 100%, 68%);
+  --on-secondary-container-color: hsl(37, 100%, 20%);
+  --tertiary-color: hsl(216, 35%, 40%);
+  --on-tertiary-color: hsl(0, 0%, 100%);
+  --tertiary-container-color: hsl(217, 87%, 82%);
+  --on-tertiary-container-color: hsl(214, 47%, 30%);
+  --error-color: hsl(5, 100%, 37%);
+  --on-error-color: hsl(0, 0%, 100%);
+  --error-container-color: hsl(9, 100%, 83%);
+  --on-error-container-color: hsl(4, 100%, 28%);
+  --background-color: hsl(0, 0%, 98%);
+  --on-background-color: hsl(180, 4%, 11%);
+  --surface-color: hsl(0, 0%, 98%);
+  --on-surface-color: hsl(180, 4%, 11%);
+  --surface-variant-color: hsl(280, 5%, 89%);
+  --on-surface-variant-color: hsl(260, 2%, 28%);
+  --outline-color: hsl(240, 1%, 47%);
+  --outline-variant-color: hsl(280, 3%, 78%);
+  --inverse-surface-color: hsl(180, 2%, 19%);
+  --inverse-on-surface-color: hsl(180, 3%, 94%);
+  --inverse-primary-color: hsl(217, 100%, 82%);
+  --surface-dim-color: hsl(0, 0%, 85%);
+  --surface-bright-color: hsl(0, 0%, 98%);
+  --surface-container-lowest-color: hsl(0, 0%, 100%);
+  --surface-container-low-color: hsl(240, 4%, 95%);
+  --surface-container-color: hsl(0, 0%, 93%);
+  --surface-container-high-color: hsl(0, 0%, 91%);
+  --surface-container-highest-color: hsl(240, 4%, 95%);
+
+  /* ── Typography ────────────────────────────────────────── */
+  --font-family-sans: "Roboto", sans-serif;
+  --font-family-display: "Inter", sans-serif;
+  --font-family-mono: "Montserrat", sans-serif;
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 1.875rem;
+  --font-size-4xl: 2.25rem;
+  --font-size-5xl: 3rem;
+  --font-size-6xl: 3.75rem;
+  --font-size-7xl: 4.5rem;
+  --font-weight-light: 300;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+  --line-height-none: 1;
+  --line-height-tight: 1.25;
+  --line-height-snug: 1.375;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.625;
+  --line-height-loose: 2;
+  --letter-spacing-tighter: -0.05em;
+  --letter-spacing-tight: -0.025em;
+  --letter-spacing-normal: 0em;
+  --letter-spacing-wide: 0.025em;
+  --letter-spacing-wider: 0.05em;
+  --letter-spacing-widest: 0.1em;
+
+  /* ── Radius ────────────────────────────────────────────── */
+  --radius-none: 0;
+  --radius-xs: 0.125rem;
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+  --radius-3xl: 2rem;
+  --radius-full: 9999px;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+[data-theme="dark"] {
+  /* ── Colour Roles (Dark) ────────────────────────────────── */
+  --primary-color: hsl(210, 82%, 27%);
+  --on-primary-color: hsl(209, 100%, 18%);
+  --primary-container-color: hsl(210, 77%, 28%);
+  --on-primary-container-color: hsl(219, 100%, 92%);
+  --secondary-color: hsl(34, 100%, 68%);
+  --on-secondary-color: hsl(36, 100%, 14%);
+  --secondary-container-color: hsl(37, 100%, 20%);
+  --on-secondary-container-color: hsl(32, 100%, 86%);
+  --tertiary-color: hsl(217, 87%, 82%);
+  --on-tertiary-color: hsl(212, 75%, 20%);
+  --tertiary-container-color: hsl(214, 47%, 30%);
+  --on-tertiary-container-color: hsl(219, 100%, 92%);
+  --error-color: hsl(300, 100%, 50%);
+  --on-error-color: hsl(300, 100%, 50%);
+  --error-container-color: hsl(300, 100%, 50%);
+  --on-error-container-color: hsl(300, 100%, 50%);
+  --background-color: hsl(300, 100%, 50%);
+  --on-background-color: hsl(0, 0%, 89%);
+  --surface-color: hsl(300, 100%, 50%);
+  --on-surface-color: hsl(0, 0%, 89%);
+  --surface-variant-color: hsl(260, 2%, 28%);
+  --on-surface-variant-color: hsl(280, 3%, 78%);
+  --outline-color: hsl(260, 1%, 57%);
+  --outline-variant-color: hsl(260, 2%, 28%);
+  --inverse-surface-color: hsl(0, 0%, 89%);
+  --inverse-on-surface-color: hsl(180, 2%, 19%);
+  --inverse-primary-color: hsl(213, 51%, 40%);
+  --surface-dim-color: hsl(300, 100%, 50%);
+  --surface-bright-color: hsl(300, 100%, 50%);
+  --surface-container-lowest-color: hsl(300, 100%, 50%);
+  --surface-container-low-color: hsl(180, 4%, 11%);
+  --surface-container-color: hsl(300, 100%, 50%);
+  --surface-container-high-color: hsl(300, 100%, 50%);
+  --surface-container-highest-color: hsl(300, 100%, 50%);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+/* ══════════════════════════════════════════════════════════════════
+   Tailwind v4 Theme Mapping — Direct token color resolution
+   ══════════════════════════════════════════════════════════════════ */
+
+@theme {
+  --color-primary: hsl(210, 82%, 27%);
+  --color-on-primary: hsl(0, 0%, 100%);
+  --color-primary-container: hsl(217, 100%, 82%);
+  --color-on-primary-container: hsl(210, 77%, 28%);
+
+  --color-secondary: hsl(38, 100%, 26%);
+  --color-on-secondary: hsl(0, 0%, 100%);
+  --color-secondary-container: hsl(34, 100%, 68%);
+  --color-on-secondary-container: hsl(37, 100%, 20%);
+
+  --color-tertiary: hsl(216, 35%, 40%);
+  --color-on-tertiary: hsl(0, 0%, 100%);
+  --color-tertiary-container: hsl(217, 87%, 82%);
+  --color-on-tertiary-container: hsl(214, 47%, 30%);
+
+  --color-error: hsl(5, 100%, 37%);
+  --color-on-error: hsl(0, 0%, 100%);
+  --color-error-container: hsl(9, 100%, 83%);
+  --color-on-error-container: hsl(4, 100%, 28%);
+
+  --color-background: hsl(0, 0%, 98%);
+  --color-on-background: hsl(180, 4%, 11%);
+
+  --color-surface: hsl(0, 0%, 98%);
+  --color-on-surface: hsl(180, 4%, 11%);
+
+  --color-surface-variant: hsl(280, 5%, 89%);
+  --color-on-surface-variant: hsl(260, 2%, 28%);
+
+  --color-outline: hsl(240, 1%, 47%);
+  --color-outline-variant: hsl(280, 3%, 78%);
+
+  --color-inverse-surface: hsl(180, 2%, 19%);
+  --color-inverse-on-surface: hsl(180, 3%, 94%);
+  --color-inverse-primary: hsl(217, 100%, 82%);
+
+  --color-surface-dim: hsl(0, 0%, 85%);
+  --color-surface-bright: hsl(0, 0%, 98%);
+  --color-surface-container-lowest: hsl(0, 0%, 100%);
+  --color-surface-container-low: hsl(240, 4%, 95%);
+  --color-surface-container: hsl(0, 0%, 93%);
+  --color-surface-container-high: hsl(0, 0%, 91%);
+  --color-surface-container-highest: hsl(240, 4%, 95%);
+
+  --font-sans: var(--font-family-sans);
+  --font-display: var(--font-family-display);
+  --font-mono: var(--font-family-mono);
+}
+
+/* ══════════════════════════════════════════════════════════════════
+   Base Styles
+   ══════════════════════════════════════════════════════════════════ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  margin: 0;
+  background-color: var(--background-color);
+  color: var(--on-background-color);
+  font-family: var(--font-family-sans);
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-normal);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-family-display);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  letter-spacing: var(--letter-spacing-tight);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ── Focus visible for accessibility ─────────────────────── */
+:focus-visible {
+  outline: 2px solid var(--primary-color);
+  outline-offset: 2px;
 }
