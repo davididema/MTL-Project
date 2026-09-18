@@ -1,9 +1,7 @@
 import { Metadata } from "next";
-import { Star } from "lucide-react";
 import AnimatedSection from "@/components/ui/AnimatedSection";
-import SectionHeading from "@/components/ui/SectionHeading";
-import Card from "@/components/ui/Card";
 import Button from "@/components/ui/Button";
+import TestimonialCard from "@/components/TestimonialCard";
 import { testimonials } from "@/data/testimonials";
 
 export const metadata: Metadata = {
@@ -60,122 +58,9 @@ export default function TestimonialsPage() {
       <section className="py-20 md:py-28 bg-background">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {/* Large Testimonial */}
-            <AnimatedSection delay={0}>
-              <Card className="h-full flex flex-col bg-surface-container-low">
-                <div className="text-4xl font-display text-primary/30 mb-4">
-                  &ldquo;&rdquo;
-                </div>
-                <blockquote className="text-lg md:text-xl font-medium text-on-surface leading-[var(--line-height-relaxed)] flex-1">
-                  &ldquo;{testimonials[0].quote}&rdquo;
-                </blockquote>
-                <div className="flex items-center gap-3 mt-8">
-                  <div className="w-12 h-12 rounded-full bg-primary/20 flex items-center justify-center text-sm font-bold text-primary">
-                    {testimonials[0].author.split(" ").map((n) => n[0]).join("")}
-                  </div>
-                  <div>
-                    <p className="text-sm font-semibold text-on-surface">
-                      {testimonials[0].author}
-                    </p>
-                    <p className="text-xs text-on-surface-variant">
-                      {testimonials[0].role}, {testimonials[0].company}
-                    </p>
-                  </div>
-                </div>
-              </Card>
-            </AnimatedSection>
-
-            {/* Medium Testimonial */}
-            <AnimatedSection delay={0.1}>
-              <Card className="h-full flex flex-col bg-surface-container-low">
-                <div className="text-3xl font-display text-primary/30 mb-4">
-                  &ldquo;&rdquo;
-                </div>
-                <blockquote className="text-on-surface leading-[var(--line-height-relaxed)] flex-1">
-                  &ldquo;{testimonials[1].quote}&rdquo;
-                </blockquote>
-                <div className="flex items-center gap-3 mt-6">
-                  <div className="w-10 h-10 rounded-full bg-tertiary/20 flex items-center justify-center text-sm font-bold text-tertiary">
-                    {testimonials[1].author.split(" ").map((n) => n[0]).join("")}
-                  </div>
-                  <div>
-                    <p className="text-sm font-semibold text-on-surface">
-                      {testimonials[1].author}
-                    </p>
-                    <p className="text-xs text-on-surface-variant">
-                      {testimonials[1].role} at {testimonials[1].company}
-                    </p>
-                  </div>
-                </div>
-              </Card>
-            </AnimatedSection>
-
-            {/* Stars Testimonial */}
-            <AnimatedSection delay={0.2}>
-              <Card className="h-full flex flex-col bg-surface-container-low">
-                <div className="flex gap-1 mb-4">
-                  {Array.from({ length: 5 }).map((_, i) => (
-                    <Star
-                      key={i}
-                      className="w-4 h-4 fill-secondary text-secondary"
-                    />
-                  ))}
-                </div>
-                <blockquote className="text-on-surface italic leading-[var(--line-height-relaxed)] flex-1">
-                  &ldquo;{testimonials[2].quote}&rdquo;
-                </blockquote>
-                <div className="flex items-center gap-3 mt-6">
-                  <div className="w-9 h-9 rounded-full bg-secondary/20 flex items-center justify-center text-xs font-bold text-secondary">
-                    {testimonials[2].author.split(" ").map((n) => n[0]).join("")}
-                  </div>
-                  <div>
-                    <p className="text-sm font-semibold text-on-surface">
-                      {testimonials[2].author}
-                    </p>
-                    <p className="text-xs text-on-surface-variant">
-                      {testimonials[2].role}, {testimonials[2].company}
-                    </p>
-                  </div>
-                </div>
-              </Card>
-            </AnimatedSection>
-
-            {/* Metrics Testimonial */}
-            <AnimatedSection delay={0.3}>
-              <Card className="h-full flex flex-col bg-surface-container-low">
-                <h3 className="text-lg font-bold text-on-surface mb-3">
-                  Metrics that Matter
-                </h3>
-                <blockquote className="text-sm text-on-surface-variant leading-[var(--line-height-relaxed)] flex-1">
-                  &ldquo;{testimonials[3].quote}&rdquo;
-                </blockquote>
-                <div className="flex gap-8 mt-6 pt-4 border-t border-outline-variant/20">
-                  {testimonials[3].metrics?.map((m) => (
-                    <div key={m.label}>
-                      <p className="text-2xl font-bold text-primary">
-                        {m.value}
-                      </p>
-                      <p className="text-xs font-semibold uppercase tracking-[var(--letter-spacing-wider)] text-on-surface-variant mt-1">
-                        {m.label}
-                      </p>
-                    </div>
-                  ))}
-                </div>
-                <div className="flex items-center gap-3 mt-6">
-                  <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-sm font-bold text-primary">
-                    {testimonials[3].author.split(" ").map((n) => n[0]).join("")}
-                  </div>
-                  <div>
-                    <p className="text-sm font-semibold text-on-surface">
-                      {testimonials[3].author}
-                    </p>
-                    <p className="text-xs text-on-surface-variant">
-                      {testimonials[3].role}, {testimonials[3].company}
-                    </p>
-                  </div>
-                </div>
-              </Card>
-            </AnimatedSection>
+            {testimonials.map((t, i) => (
+              <TestimonialCard key={t.id} testimonial={t} delay={i * 0.1} />
+            ))}
           </div>
         </div>
       </section>
@@ -191,9 +76,9 @@ export default function TestimonialsPage() {
               Join the ranks of industry leaders who demand digital excellence.
               Let&apos;s discuss how we can engineer success for your brand.
             </p>
-            <Button href="/contact" variant="cta" size="lg">
-              Start a Conversation
-            </Button>
+              <Button href="/contact" variant="primary" withArrow size="lg">
+                Start a Conversation
+              </Button>
           </AnimatedSection>
         </div>
       </section>

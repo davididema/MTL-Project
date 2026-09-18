@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import SectionHeading from "@/components/ui/SectionHeading";
 import { projects, PORTFOLIO_CATEGORIES } from "@/data/portfolio";
@@ -53,13 +54,13 @@ export default function PortfolioPage() {
             {filteredProjects.map((project, i) => (
               <AnimatedSection key={project.id} delay={i * 0.08}>
                 <div className="group relative aspect-[4/3] rounded-[var(--radius-xl)] overflow-hidden bg-surface-container cursor-pointer">
-                  {/* Gradient placeholder */}
-                  <div
-                    className="absolute inset-0 transition-transform duration-500 group-hover:scale-105"
-                    style={{
-                      background: `linear-gradient(${135 + i * 30}deg, var(--primary-color) 0%, var(--tertiary-color) 50%, var(--inverse-surface-color) 100%)`,
-                      opacity: 0.7 + i * 0.05,
-                    }}
+                  {/* Project image */}
+                  <Image
+                    src={project.image}
+                    alt={project.title}
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
                   />
                   {/* Hover overlay */}
                   <div className="absolute inset-0 bg-inverse-surface/0 group-hover:bg-inverse-surface/60 transition-all duration-300 flex items-end p-6">

@@ -1,8 +1,10 @@
+export type ServiceIcon = "Code" | "Scissors" | "TrendingUp" | "Layout";
+
 export interface Service {
   id: string;
   title: string;
   description: string;
-  icon: string;
+  icon: ServiceIcon;
   tags: string[];
 }
 

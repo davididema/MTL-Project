@@ -5,12 +5,12 @@ import {
   Crosshair,
   Layers,
   Zap,
-  Star,
 } from "lucide-react";
 import AnimatedSection from "@/components/ui/AnimatedSection";
 import Button from "@/components/ui/Button";
 import Badge from "@/components/ui/Badge";
 import Card from "@/components/ui/Card";
+import TestimonialCard from "@/components/TestimonialCard";
 import { testimonials } from "@/data/testimonials";
 
 export const metadata: Metadata = {
@@ -75,7 +75,7 @@ export default function HomePage() {
           </AnimatedSection>
           <AnimatedSection delay={0.3}>
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Button href="/contact" variant="cta" size="lg">
+              <Button href="/contact" variant="primary" size="lg" withArrow>
                 Consultation
               </Button>
               <Button href="/portfolio" variant="secondary" size="lg" className="border-inverse-on-surface/30 text-inverse-on-surface hover:bg-inverse-on-surface/10">
@@ -105,43 +105,43 @@ export default function HomePage() {
           </AnimatedSection>
 
           <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
-            {/* Large project card */}
-            <AnimatedSection className="md:col-span-3" delay={0.1}>
-              <Link href={featuredProjects[0].href} className="group block relative aspect-[16/10] rounded-[var(--radius-xl)] overflow-hidden bg-surface-container">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/30 via-tertiary/20 to-inverse-surface/90" />
-                <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <div className="flex gap-2 mb-3">
-                    {featuredProjects[0].tags.map((tag) => (
-                      <Badge key={tag} className="bg-inverse-surface/80 text-inverse-on-surface border-transparent text-xs">
-                        {tag}
-                      </Badge>
-                    ))}
+            {featuredProjects.map((project, i) => (
+              <AnimatedSection
+                key={project.title}
+                className={`${i === 0 ? "md:col-span-3" : "md:col-span-2"}`}
+                delay={0.1 + i * 0.1}
+              >
+                <Link
+                  href={project.href}
+                  className={`group block relative aspect-[16/10] ${
+                    i === 0 ? "" : "md:aspect-auto md:h-full"
+                  } rounded-[var(--radius-xl)] overflow-hidden bg-surface-container`}
+                >
+                  <div
+                    className={`absolute inset-0 ${
+                      i === 0
+                        ? "bg-gradient-to-br from-primary/30 via-tertiary/20 to-inverse-surface/90"
+                        : "bg-gradient-to-br from-tertiary/30 via-primary/20 to-inverse-surface/90"
+                    }`}
+                  />
+                  <div className="absolute bottom-0 left-0 right-0 p-6">
+                    <div className="flex gap-2 mb-3">
+                      {project.tags.map((tag) => (
+                        <Badge
+                          key={tag}
+                          className="bg-inverse-surface/80 text-inverse-on-surface border-transparent text-xs"
+                        >
+                          {tag}
+                        </Badge>
+                      ))}
+                    </div>
+                    <h3 className="text-xl font-bold text-inverse-on-surface group-hover:text-inverse-primary transition-colors">
+                      {project.title}
+                    </h3>
                   </div>
-                  <h3 className="text-xl font-bold text-inverse-on-surface group-hover:text-inverse-primary transition-colors">
-                    {featuredProjects[0].title}
-                  </h3>
-                </div>
-              </Link>
-            </AnimatedSection>
-
-            {/* Smaller project card */}
-            <AnimatedSection className="md:col-span-2" delay={0.2}>
-              <Link href={featuredProjects[1].href} className="group block relative aspect-[16/10] md:aspect-auto md:h-full rounded-[var(--radius-xl)] overflow-hidden bg-surface-container">
-                <div className="absolute inset-0 bg-gradient-to-br from-tertiary/30 via-primary/20 to-inverse-surface/90" />
-                <div className="absolute bottom-0 left-0 right-0 p-6">
-                  <div className="flex gap-2 mb-3">
-                    {featuredProjects[1].tags.map((tag) => (
-                      <Badge key={tag} className="bg-inverse-surface/80 text-inverse-on-surface border-transparent text-xs">
-                        {tag}
-                      </Badge>
-                    ))}
-                  </div>
-                  <h3 className="text-xl font-bold text-inverse-on-surface group-hover:text-inverse-primary transition-colors">
-                    {featuredProjects[1].title}
-                  </h3>
-                </div>
-              </Link>
-            </AnimatedSection>
+                </Link>
+              </AnimatedSection>
+            ))}
           </div>
 
           <Link
@@ -215,29 +215,7 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {testimonials.slice(0, 2).map((t, i) => (
-              <AnimatedSection key={t.id} delay={i * 0.1}>
-                <Card className="h-full flex flex-col justify-between">
-                  <div>
-                    <div className="flex gap-1 mb-4 text-secondary">
-                      {Array.from({ length: t.stars || 5 }).map((_, idx) => (
-                        <Star key={idx} className="w-4 h-4 fill-current" />
-                      ))}
-                    </div>
-                    <p className="text-on-surface text-base leading-[var(--line-height-relaxed)] mb-6">
-                      &ldquo;{t.quote}&rdquo;
-                    </p>
-                  </div>
-                  <div className="flex items-center gap-3 border-t border-outline-variant/20 pt-4">
-                    <div className="w-10 h-10 rounded-full bg-primary/10 text-primary font-bold text-sm flex items-center justify-center">
-                      {t.author.charAt(0)}
-                    </div>
-                    <div>
-                      <p className="text-sm font-semibold text-on-surface">{t.author}</p>
-                      <p className="text-xs text-on-surface-variant">{t.role}, {t.company}</p>
-                    </div>
-                  </div>
-                </Card>
-              </AnimatedSection>
+              <TestimonialCard key={t.id} testimonial={t} delay={i * 0.1} />
             ))}
           </div>
         </div>

@@ -1,30 +1,26 @@
-import { ReactNode, ButtonHTMLAttributes } from "react";
+import { AnchorHTMLAttributes, ButtonHTMLAttributes, ReactNode } from "react";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
-type ButtonVariant = "primary" | "secondary" | "cta" | "outline";
+type ButtonVariant = "primary" | "secondary" | "outline";
 type ButtonSize = "sm" | "md" | "lg";
 
 interface ButtonBaseProps {
   variant?: ButtonVariant;
   size?: ButtonSize;
-  children: ReactNode;
-  className?: string;
   withArrow?: boolean;
+  className?: string;
+  children: ReactNode;
 }
 
-interface ButtonAsButton
-  extends ButtonBaseProps,
-    Omit<ButtonHTMLAttributes<HTMLButtonElement>, "children"> {
-  href?: never;
-}
-
-interface ButtonAsLink extends ButtonBaseProps {
-  href: string;
-  external?: boolean;
-}
-
-type ButtonProps = ButtonAsButton | ButtonAsLink;
+type ButtonProps = ButtonBaseProps &
+  (
+    | {
+        href: string;
+        external?: boolean;
+      }
+    | Omit<ButtonHTMLAttributes<HTMLButtonElement>, "children">
+  );
 
 const sizeClasses: Record<ButtonSize, string> = {
   sm: "px-4 py-2 text-sm",
@@ -37,63 +33,53 @@ const variantClasses: Record<ButtonVariant, string> = {
     "bg-primary text-on-primary hover:brightness-110 shadow-sm hover:shadow-md",
   secondary:
     "bg-transparent text-on-surface border border-outline-variant hover:bg-surface-variant",
-  cta: "bg-primary text-on-primary hover:brightness-110 shadow-sm hover:shadow-md",
   outline:
     "bg-transparent text-primary border border-primary hover:bg-primary hover:text-on-primary",
 };
 
-export default function Button(props: ButtonProps) {
-  const {
-    variant = "primary",
-    size = "md",
-    children,
-    className = "",
-    withArrow = false,
-  } = props;
+const baseClasses = `inline-flex items-center justify-center gap-2 font-medium rounded-[var(--radius-md)] transition-all duration-200 ease-out cursor-pointer focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-2`;
 
-  const baseClasses = `inline-flex items-center justify-center gap-2 font-medium rounded-[var(--radius-md)] transition-all duration-200 ease-out cursor-pointer focus-visible:outline-2 focus-visible:outline-primary focus-visible:outline-offset-2 ${sizeClasses[size]} ${variantClasses[variant]} ${className}`;
+export default function Button({
+  variant = "primary",
+  size = "md",
+  withArrow = false,
+  className = "",
+  children,
+  ...props
+}: ButtonProps &
+  // Guard against accidentally passing link-only props to a button
+  Omit<AnchorHTMLAttributes<HTMLAnchorElement>, "href">) {
+  const classes = `${baseClasses} ${sizeClasses[size]} ${variantClasses[variant]} ${className}`;
 
   const content = (
     <>
       {children}
-      {(withArrow || variant === "cta") && <ArrowRight className="w-4 h-4" />}
+      {withArrow && <ArrowRight className="w-4 h-4" />}
     </>
   );
 
   if ("href" in props && props.href) {
-    const linkProps = props as ButtonAsLink;
-    if (linkProps.external) {
-      return (
-        <a
-          href={linkProps.href}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={baseClasses}
-        >
-          {content}
-        </a>
-      );
-    }
-    return (
-      <Link href={linkProps.href} className={baseClasses}>
+    const { href, external, ...linkRest } = props as {
+      href: string;
+      external?: boolean;
+      target?: string;
+      rel?: string;
+    };
+    const rel = external ? "noopener noreferrer" : linkRest.rel;
+    return external ? (
+      <a href={href} target="_blank" rel={rel} className={classes}>
+        {content}
+      </a>
+    ) : (
+      <Link href={href} rel={rel} className={classes}>
         {content}
       </Link>
     );
   }
 
-  const {
-    href: _href,
-    external: _ext,
-    withArrow: _wa,
-    variant: _v,
-    size: _s,
-    className: _className,
-    children: _c,
-    ...buttonProps
-  } = props as ButtonAsButton & { href?: never; external?: never };
-
+  const buttonProps = props as Omit<ButtonHTMLAttributes<HTMLButtonElement>, "children">;
   return (
-    <button {...buttonProps} className={baseClasses}>
+    <button {...buttonProps} className={classes}>
       {content}
     </button>
   );

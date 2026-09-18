@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Image from "next/image";
 import {
   Compass,
   Shield,
@@ -139,7 +140,16 @@ export default function AboutPage() {
                         <Plus className="w-10 h-10 text-outline-variant" />
                       </div>
                     ) : (
-                      <div className="absolute inset-0 bg-gradient-to-b from-primary/10 via-tertiary/10 to-surface-container group-hover:from-primary/20 transition-all duration-300" />
+                      <>
+                        <Image
+                          src={member.image}
+                          alt={member.name}
+                          fill
+                          sizes="(max-width: 768px) 50vw, 25vw"
+                          className="object-cover transition-transform duration-300 group-hover:scale-105"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-b from-primary/10 via-transparent to-surface-container/40" />
+                      </>
                     )}
                   </div>
                   <h3 className="text-sm font-bold text-on-surface">

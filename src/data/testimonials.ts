@@ -18,7 +18,7 @@ export const testimonials: Testimonial[] = [
     author: "Sarah Jenkins",
     role: "CTO",
     company: "Nexus Corp",
-    avatar: "/images/testimonials/avatar-1.jpg",
+    avatar: "/images/testimonials/avatar-1.svg",
     variant: "large",
   },
   {
@@ -28,7 +28,7 @@ export const testimonials: Testimonial[] = [
     author: "Marcus Vance",
     role: "Design Dir.",
     company: "Altura",
-    avatar: "/images/testimonials/avatar-2.jpg",
+    avatar: "/images/testimonials/avatar-2.svg",
     variant: "medium",
   },
   {
@@ -38,7 +38,7 @@ export const testimonials: Testimonial[] = [
     author: "Elena Rostova",
     role: "Founder",
     company: "FinEdge",
-    avatar: "/images/testimonials/avatar-3.jpg",
+    avatar: "/images/testimonials/avatar-3.svg",
     variant: "stars",
     stars: 5,
   },
@@ -49,7 +49,7 @@ export const testimonials: Testimonial[] = [
     author: "David Chen",
     role: "CEO",
     company: "DataFlow",
-    avatar: "/images/testimonials/avatar-4.jpg",
+    avatar: "/images/testimonials/avatar-4.svg",
     variant: "metrics",
     metrics: [
       { label: "Retention Boost", value: "42%" },

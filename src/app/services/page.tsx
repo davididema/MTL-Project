@@ -5,7 +5,7 @@ import SectionHeading from "@/components/ui/SectionHeading";
 import Card from "@/components/ui/Card";
 import Badge from "@/components/ui/Badge";
 import Button from "@/components/ui/Button";
-import { services } from "@/data/services";
+import { services, type ServiceIcon } from "@/data/services";
 
 export const metadata: Metadata = {
   title: "Services",
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     "We craft high-performance digital products and robust brand identities. Our approach merges industrial strength engineering with meticulous design precision.",
 };
 
-const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
+const iconMap: Record<ServiceIcon, React.ComponentType<{ className?: string }>> = {
   Code,
   Scissors,
   TrendingUp,
@@ -41,7 +41,7 @@ export default function ServicesPage() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             {services.map((service, i) => {
-              const Icon = iconMap[service.icon] || Code;
+              const Icon = iconMap[service.icon];
               return (
                 <AnimatedSection key={service.id} delay={i * 0.1}>
                   <Card className="h-full flex flex-col">
@@ -81,7 +81,7 @@ export default function ServicesPage() {
                   digital presence.
                 </p>
               </div>
-              <Button href="/contact" variant="cta" size="lg" className="shrink-0">
+              <Button href="/contact" variant="primary" withArrow size="lg" className="shrink-0">
                 Start a Project
               </Button>
             </div>
